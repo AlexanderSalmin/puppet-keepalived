@@ -1,7 +1,7 @@
 define keepalived::real_server (
   String $virtual_server,
   Optional[Integer[1]] $weight = undef,
-  Optional[Enum['NAT', 'DR', 'TUN']] $lvs_method = undef,
+  Optional[Keepalived::Virtual_server::Lvs_methods] $lvs_method = undef,
   Optional[Boolean] $inhibit_on_failure = undef,
   Optional[String] $notify_up = undef,
   Optional[String] $notify_down = undef,
