@@ -1,0 +1,5 @@
+#
+# Managed by Puppet in the <%= $::environment %> environment
+#
+
+include <%= $keepalived::config_dir %>/conf.d/*.conf

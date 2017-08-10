@@ -1,0 +1,69 @@
+---
+lookup_options:
+  keepalived::opts:
+    merge:
+      strategy: deep
+  keepalived::static_ipaddress:
+    merge:
+      strategy: unique
+  keepalived::static_routes:
+    merge:
+      strategy: unique
+  keepalived::static_rules:
+    merge:
+      strategy: unique
+  keepalived::globaldefs_opts:
+    merge:
+      strategy: deep
+  keepalived::vrrp_scripts:
+    merge:
+      strategy: deep
+  keepalived::vrrp_sync_groups:
+    merge:
+      strategy: deep
+  keepalived::vrrp_instances:
+    merge:
+      strategy: deep
+  keepalived::lvs::virtual_servers:
+    merge:
+      strategy: deep
+  keepalived::lvs::real_servers:
+    merge:
+      strategy: deep
+  keepalived::packages:
+    merge:
+      strategy: hash
+keepalived::opts: {}
+keepalived::globaldefs_opts: {}
+keepalived::static_ipaddress: []
+keepalived::static_routes: []
+keepalived::static_rules: []
+keepalived::vrrp_scripts: {}
+keepalived::vrrp_sync_groups: {}
+keepalived::garp_groups: {}
+keepalived::vrrp_instances: {}
+keepalived::config_dir: "/etc/keepalived"
+keepalived::config_dir_purge: true
+keepalived::config_file: "%{lookup('keepalived::config_dir')}/keepalived.conf"
+keepalived::config_file_manage: true
+keepalived::packages:
+  "keepalived": {}
+keepalived::service_name: "keepalived"
+keepalived::service_manage: true
+keepalived::service_ensure: "running"
+keepalived::service_enable: true
+keepalived::opts: {}
+keepalived::globaldefs_opts: {}
+keepalived::static_ipaddress: []
+keepalived::static_routes: []
+keepalived::static_rules: []
+keepalived::config_dir: "/etc/keepalived"
+keepalived::config_dir_purge: true
+keepalived::config_file: "%{lookup('keepalived::config_dir')}/keepalived.conf"
+keepalived::config_file_manage: true
+keepalived::packages:
+  "keepalived": {}
+keepalived::service_name: "keepalived"
+keepalived::service_manage: true
+keepalived::service_ensure: "running"
+keepalived::service_enable: true
