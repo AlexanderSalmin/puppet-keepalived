@@ -42,8 +42,8 @@ define keepalived::vrrp_instance (
   Optional[Boolean] $smtp_alert = undef,
   Enum["present", "absent"] $ensure = "present"
 ) {
-  keepalived::block {"vrrp_instance_${name}":
-    order => "20",
+  keepalived::config_block {"vrrp_instance_${name}":
+    order => "25",
     block_id => "vrrp_instance",
     block_name => $name,
     opts => {

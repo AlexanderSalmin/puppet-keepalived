@@ -7,7 +7,7 @@ define keepalived::vrrp_sync_group (
   Optional[Boolean] $smtp_alert = undef,
   Enum["present", "absent"] $ensure = "present"
 ) {
-  keepalived::block {"vrrp_sync_group_${name}":
+  keepalived::config_block {"vrrp_sync_group_${name}":
     order => "15",
     block_id => "vrrp_sync_group",
     block_name => $name,

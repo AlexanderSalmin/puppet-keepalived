@@ -23,7 +23,7 @@ class keepalived (
   include keepalived::config
   include keepalived::service
 
-  keepalived::block {
+  keepalived::config_block {
     "global_defs":
       order => "00",
       opts => $globaldefs_opts;

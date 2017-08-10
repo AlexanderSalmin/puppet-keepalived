@@ -1,0 +1,1 @@
+<%= keepalived::render_block($opts) %>

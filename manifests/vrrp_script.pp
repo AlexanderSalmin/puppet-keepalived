@@ -9,7 +9,7 @@ define keepalived::vrrp_script (
   Optional[Boolean] $init_fail = Boolean,
   Enum["present", "absent"] $ensure = "present"
 ) {
-  keepalived::block {"vrrp_script_${name}":
+  keepalived::config_block {"vrrp_script_${name}":
     order => "10",
     block_id => "vrrp_script",
     block_name => $name,

@@ -24,7 +24,7 @@ lookup_options:
   keepalived::vrrp_instances:
     merge:
       strategy: deep
-  keepalived::lvs::virtual_servers:
+  keepalived::virtual_servers:
     merge:
       strategy: deep
   keepalived::lvs::real_servers:
@@ -42,6 +42,7 @@ keepalived::vrrp_scripts: {}
 keepalived::vrrp_sync_groups: {}
 keepalived::garp_groups: {}
 keepalived::vrrp_instances: {}
+keepalived::virtual_servers: {}
 keepalived::config_dir: "/etc/keepalived"
 keepalived::config_dir_purge: true
 keepalived::config_file: "%{lookup('keepalived::config_dir')}/keepalived.conf"

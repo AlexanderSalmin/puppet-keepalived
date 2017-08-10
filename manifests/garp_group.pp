@@ -9,7 +9,7 @@ define keepalived::garp_group (
     fail("Only one of interface or interfaces should be used in ${title}")
   }
 
-  keepalived::block {"garp_group_${name}":
+  keepalived::config_block {"garp_group_${name}":
     order => "20",
     block_id => "garp_group",
     opts => {
