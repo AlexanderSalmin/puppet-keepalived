@@ -27,9 +27,6 @@ lookup_options:
   keepalived::virtual_servers:
     merge:
       strategy: deep
-  keepalived::lvs::real_servers:
-    merge:
-      strategy: deep
   keepalived::packages:
     merge:
       strategy: hash
