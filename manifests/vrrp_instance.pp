@@ -38,7 +38,7 @@ define keepalived::vrrp_instance (
   Optional[String] $notify_backup = undef,
   Optional[String] $notify_fault = undef,
   Optional[String] $notify_stop = undef,
-  Optional[String] $notify = undef,
+  Optional[String] $notify_all = undef,
   Optional[Boolean] $smtp_alert = undef,
   Enum["present", "absent"] $ensure = "present"
 ) {
@@ -86,7 +86,7 @@ define keepalived::vrrp_instance (
       "notify_backup" => $notify_backup,
       "notify_fault" => $notify_fault,
       "notify_stop" => $notify_stop,
-      "notify" => $notify,
+      "notify" => $notify_all,
       "smtp_alert" => $smtp_alert
     },
     ensure => $ensure

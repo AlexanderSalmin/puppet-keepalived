@@ -3,7 +3,7 @@ define keepalived::vrrp_sync_group (
   Optional[String] $notify_master = undef,
   Optional[String] $notify_backup = undef,
   Optional[String] $notify_fault = undef,
-  Optional[String] $notify = undef,
+  Optional[String] $notify_all = undef,
   Optional[Boolean] $smtp_alert = undef,
   Enum["present", "absent"] $ensure = "present"
 ) {
@@ -16,7 +16,7 @@ define keepalived::vrrp_sync_group (
       "notify_master" => $notify_master,
       "notify_backup" => $notify_backup,
       "notify_fault" => $notify_fault,
-      "notify" => $notify,
+      "notify" => $notify_all,
       "smtp_alert" => $smtp_alert
     },
     ensure => $ensure

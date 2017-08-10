@@ -38,7 +38,7 @@ type Keepalived::Vrrp::Instance = Struct[{
   Optional[notify_backup] => String,
   Optional[notify_fault] => String,
   Optional[notify_stop] => String,
-  Optional["notify"] => String,
+  Optional[notify_all] => String,
   Optional[smtp_alert] => Boolean,
   Optional[ensure] => Enum["present", "absent"]
 }]

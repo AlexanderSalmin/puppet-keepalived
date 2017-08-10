@@ -2,4 +2,8 @@
 # Managed by Puppet in the <%= $::environment %> environment
 #
 
+<% if size($opts) > 0 { -%>
+<%= keepalived::render_block($opts, '') %>
+
+<% } -%>
 include <%= $keepalived::config_dir %>/conf.d/*.conf

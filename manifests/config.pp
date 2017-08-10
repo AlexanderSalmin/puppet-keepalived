@@ -13,7 +13,7 @@ class keepalived::config {
       owner => "root",
       group => "root",
       mode => "0644",
-      content => epp("keepalived/keepalived.conf.epp")
+      content => epp("keepalived/keepalived.conf.epp", {"opts" => $keepalived::opts})
     }
   }
 
