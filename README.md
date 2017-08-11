@@ -483,10 +483,42 @@ MISC heath check.
 
 ## Hiera integration
 
-You should define your configuration in Hiera as follows.
+You should define your configuration in Hiera. See the example below.
 
 ```
----
+keepalived::global_defs:
+  notification_email:
+    - 'postmaster@example.org'
+  notification_email_from: 'keepalived@example.org'
+keepalived::vrrp_sync_groups:
+  "VG_1":
+    group:
+      - V1_1
+      - V1_2
+  notify_master: "/bin/true"
+keepalived::vrrp_instances:
+  "VI_1":
+    state: MASTER
+    interface: eno1
+    virtual_router_id: 1
+    priority: 100
+    advert_int: 1
+    authentication:
+      auth_type: PASS
+      auth_pass: secret
+    virtual_ipaddress:
+      - 10.0.0.1/24
+  "VI_2":
+    state: MASTER
+    interface: eno2
+    virtual_router_id: 2
+    priority: 100
+    advert_int: 1
+    authentication:
+      auth_type: PASS
+      auth_pass: secret
+    virtual_ipaddress:
+      - 10.0.1.1/24
 ```
 
 <a name="contact"/>
