@@ -1,8 +1,7 @@
 define keepalived::vrrp_instance (
-  Optional[String] $use_vmac = undef,
+  Optional[Variant[Boolean, String]] $use_vmac = undef,
   Optional[Integer[2, 3]] $version = undef,
   Optional[Boolean] $vmac_xmit_base = undef,
-  Optional[Boolean] $native_ipv6 = undef,
   Optional[Enum["MASTER", "BACKUP"]] $state = undef,
   Optional[String] $interface = undef,
   Optional[Boolean] $accept = undef,
@@ -50,7 +49,6 @@ define keepalived::vrrp_instance (
       "use_vmac" => $use_vmac,
       "version" => $version,
       "vmac_xmit_base" => $vmac_xmit_base,
-      "native_ipv6" => $native_ipv6,
       "state" => $state,
       "interface" => $interface,
       "accept" => $accept,

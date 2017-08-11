@@ -1,5 +1,5 @@
 type Keepalived::Globaldefs_options = Struct[{
-  Optional[notification_email] => Variant[String, Array[String]],
+  Optional[notification_email] => Array[String],
   Optional[notification_email_from] => String,
   Optional[smtp_server] => String,
   Optional[smtp_helo_name] => String,

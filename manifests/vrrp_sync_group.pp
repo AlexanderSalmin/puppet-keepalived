@@ -19,6 +19,7 @@ define keepalived::vrrp_sync_group (
       "notify" => $notify_all,
       "smtp_alert" => $smtp_alert
     },
-    ensure => $ensure
+    ensure => $ensure,
+    require => Keepalived::Vrrp_instance[$group]
   }
 }
