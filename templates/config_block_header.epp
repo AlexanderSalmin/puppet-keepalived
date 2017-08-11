@@ -1,1 +1,5 @@
+!
+! Managed by Puppet in the <%= $::environment %> environment
+!
+
 <%= $block_id %><% if $block_name { %> <%= $block_name %><% } %> {
