@@ -31,7 +31,8 @@ lookup_options:
     merge:
       strategy: hash
 keepalived::opts: {}
-keepalived::globaldefs_opts: {}
+keepalived::globaldefs_opts:
+  router_id: "%{facts.networking.fqdn}"
 keepalived::static_ipaddress: []
 keepalived::static_routes: []
 keepalived::static_rules: []
