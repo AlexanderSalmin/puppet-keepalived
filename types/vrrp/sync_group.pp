@@ -5,5 +5,5 @@ type Keepalived::Vrrp::Sync_group = Struct[{
   Optional[notify_fault] => String,
   Optional[notify_all] => String,
   Optional[smtp_alert] => Boolean,
-  Optional[ensure] => Enum["present", "absent"]
+  Optional[ensure] => Enum['present', 'absent']
 }]

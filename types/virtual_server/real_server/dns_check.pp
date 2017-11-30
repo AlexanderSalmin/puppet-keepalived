@@ -6,6 +6,6 @@ type Keepalived::Virtual_server::Real_server::Dns_check = Struct[{
   Optional[connect_timeout] => Integer[1],
   Optional[fwmark] => Integer,
   Optional[retry] => Integer[1],
-  Optional["type"] => String,
+  Optional['type'] => String,
   Optional[name] => String
 }]

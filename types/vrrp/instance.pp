@@ -2,7 +2,7 @@ type Keepalived::Vrrp::Instance = Struct[{
   Optional[use_vmac] => Variant[Boolean, String],
   Optional[version] => Integer[2, 3],
   Optional[vmac_xmit_base] => Boolean,
-  Optional[state] => Enum["MASTER", "BACKUP"],
+  Optional[state] => Enum['MASTER', 'BACKUP'],
   Optional[interface] => String,
   Optional[accept] => Boolean,
   Optional[no_accept] => Boolean,
@@ -39,5 +39,5 @@ type Keepalived::Vrrp::Instance = Struct[{
   Optional[notify_stop] => String,
   Optional[notify_all] => String,
   Optional[smtp_alert] => Boolean,
-  Optional[ensure] => Enum["present", "absent"]
+  Optional[ensure] => Enum['present', 'absent']
 }]

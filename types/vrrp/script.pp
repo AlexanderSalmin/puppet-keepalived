@@ -7,5 +7,5 @@ type Keepalived::Vrrp::Script = Struct[{
   Optional[rise] => Integer[1],
   Optional[user] => String,
   Optional[init_fail] => Boolean,
-  Optional[ensure] => Enum["present", "absent"]
+  Optional[ensure] => Enum['present', 'absent']
 }]

@@ -3,5 +3,5 @@ type Keepalived::Garp::Group = Struct[{
   Optional[gna_interval] => Integer[1],
   Optional[interface] => String,
   Optional[interfaces] => Array[String],
-  Optional[ensure] => Enum["present", "absent"]
+  Optional[ensure] => Enum['present', 'absent']
 }]

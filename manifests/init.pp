@@ -1,3 +1,4 @@
+#=Class keepalived
 class keepalived (
   Keepalived::Options $opts,
   Keepalived::Globaldefs_options $globaldefs_opts,
@@ -16,7 +17,7 @@ class keepalived (
   Hash $packages,
   String $service_name,
   Boolean $service_manage,
-  Enum["stopped", "running"] $service_ensure,
+  Enum['stopped', 'running'] $service_ensure,
   Boolean $service_enable
 ) {
   include keepalived::install
@@ -24,21 +25,21 @@ class keepalived (
   include keepalived::service
 
   keepalived::config_block {
-    "global_defs":
-      order => "00",
-      opts => $globaldefs_opts;
+    'global_defs':
+      order => '00',
+      opts  => $globaldefs_opts;
 
-    "static_ipaddress":
-      order => "05",
-      opts => $static_ipaddress;
+    'static_ipaddress':
+      order => '05',
+      opts  => $static_ipaddress;
 
-    "static_routes":
-      order => "05",
-      opts => $static_routes;
+    'static_routes':
+      order => '05',
+      opts  => $static_routes;
 
-    "static_rules":
-      order => "05",
-      opts => $static_rules;
+    'static_rules':
+      order => '05',
+      opts  => $static_rules;
   }
 
   $vrrp_scripts.each |String $script_name, Keepalived::Vrrp::Script $script| {
